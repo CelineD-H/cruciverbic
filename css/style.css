@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "kids";
+    src: url(LittleKidsHandwriting-Regular.otf);
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    justify-self: flex-start;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: antiquewhite;
+}
+
+section {
+    flex: auto;
+    display: flex;
+    align-self: center;
+}
+
+.defs {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    padding-left: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+h2 {
+    margin-top: 1em;
+}
+
+.grille {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(14, 40px);
+    grid-template-rows: repeat(10, 40px);
+    align-self: center;
+}
+
+.case {
+    border: 1px solid black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "kids";
+    font-size: 40px;
+}
+
+.case_noire {
+    background-color: black;
+}
+
+.case_coordonnees {
+    text-align: center;
+    align-self: center;
+}
+
+footer {
+    justify-self: flex-end;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    background-color: antiquewhite;
+}
