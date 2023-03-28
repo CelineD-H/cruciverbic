@@ -1,4 +1,4 @@
-const tab = [
+const tabVide = [
     [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
     [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [3, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], 
@@ -10,8 +10,21 @@ const tab = [
     [3, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0],
     [3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
 ];
+const tabSolution = [
+    [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    [3, "A", "N", "A", "C", "H", "R", "O", "N", "I", "Q", "U", "E", "S"],
+    [3, "R", "A", "M", "A", 1, "T", "U", "E", 1, "U", "R", 1, "S"], 
+    [3, "C", "R", "E", "M", "A", "T", 1, "F", "R", "I", "G", "G", "A"],
+    [3, "H", "A", "R", "P", "E", 1, "S", 1, "E", "L", "E", "E", 1],
+    [3, "I", 1, 1, "I", 1, "S", "H", "E", "R", "L", "O", "C", "K"], 
+    [3, "B", "I", "E", "N", "F", "A", "I", "T", 1, "E", "N", "K", "I"],
+    [3, "A", "N", "A", "G", "R", "A", "M", "M", "E", 1, "S", "O", "L"],
+    [3, "L", 1, "U", 1, "E", "B", "L", "O", "U", "I", 1, 1, "O"],
+    [3, "D", "I", "X", "I", "T", 1, "A", "C", "T", "I", "V", "E", "S"]
+]
 
 const letters = /^[a-zA-Z ]+$/;
+let tab = tabVide;
 
 export function afficherGrille() {
     for (let i = 0; i < tab.length; i++) {
@@ -19,6 +32,7 @@ export function afficherGrille() {
             createElem(tab[i][j], i, j);
         }
     }
+    console.log(tabSolution[1][1]);
 }
 
 function createElem(k, i, j) {
@@ -66,3 +80,4 @@ export function recupLettre() {
     let lettre = document.getElementById("lettre").value;
     return lettre;
 }
+
