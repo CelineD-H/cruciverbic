@@ -19,9 +19,7 @@ export function afficherGrille() {
             createElem(tab[i][j], i, j);
         }
     }
-    console.log("afficherGrille");
 }
-
 
 function createElem(k, i, j) {
     let monElem = document.createElement('p');
@@ -47,13 +45,24 @@ export function buttons() {
     for (let button of buttons) {
         button.onclick = function() {
             let lettre = prompt("Quelle lettre ?");
-            if (lettre.length > 1) {
-                alert("UNE seule lettre svp !");
-            } else if (lettre.match(letters)) {
+            if(isOkLettre(lettre, letters)) {
                 button.innerHTML = lettre;
-            } else {
-                alert("Veuillez saisir une lettre svp !")
             }
         }
     }
+}
+
+function isOkLettre(lettre, letters) {
+     let ok = false;
+     if (lettre.match(letters) && lettre.length == 1) {
+        ok = true;
+    } else {
+        alert("C'est une case de mots croisés !! il faut rentrer UNE LETTRE !!")
+    }
+    return ok;
+}
+
+export function recupLettre() {
+    let lettre = document.getElementById("lettre").value;
+    return lettre;
 }
