@@ -32,7 +32,6 @@ export function afficherGrille() {
             createElem(tab[i][j], i, j);
         }
     }
-    console.log(tabSolution[1][1]);
 }
 
 function createElem(k, i, j) {
