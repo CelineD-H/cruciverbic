@@ -1,8 +1,7 @@
-import { afficherGrille, buttons, recupLettre } from "./utils.js";
+import { afficherGrille, buttons, pop } from "./utils.js";
 
 afficherGrille();
 
 buttons();
 
-console.log(recupLettre);
-
+//pop();

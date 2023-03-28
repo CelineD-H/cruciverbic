@@ -38,6 +38,7 @@ function createElem(k, i, j) {
     let monElem = document.createElement('p');
     switch (k) {
         case 0 : monElem.classList.add("case");
+                 monElem.id = i + "_" + j;
         break;
         case 1 : monElem.classList.add("case_noire");
         break;
@@ -60,6 +61,8 @@ export function buttons() {
             let lettre = prompt("Quelle lettre ?");
             if(isOkLettre(lettre, letters)) {
                 button.innerHTML = lettre;
+                let id = button.id;
+                mauvaiseReponse(lettre, id, button);
             }
         }
     }
@@ -75,8 +78,33 @@ function isOkLettre(lettre, letters) {
     return ok;
 }
 
-export function recupLettre() {
+function recupLettre() {
     let lettre = document.getElementById("lettre").value;
+    console.log(lettre);
     return lettre;
 }
 
+export function pop(){
+    let pops = document.querySelectorAll(".case");
+    for (let pop of pops) {
+        pop.onclick = function() {
+            let lettre = recupLettre();
+            if (isOkLettre(lettre, letters)) {
+                pop.innerHTML = lettre;
+            }
+        }
+    }
+}
+
+function mauvaiseReponse(lettre, id, button) {
+    let i = id.substring(0, 1);
+    let j = id.substring(2);
+    lettre = lettre.toUpperCase();
+    console.log(lettre);
+    console.log(tabSolution[i][j]);
+    if (lettre == tabSolution[i][j]) {
+        button.style.color = "blue";
+    } else {
+        button.style.color = "red";
+    }
+}
